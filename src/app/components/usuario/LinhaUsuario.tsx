@@ -3,11 +3,13 @@ import Image from "next/image";
 
 export interface LinhaUsuarioProps {
     usuario: Usuario
+    onClick?: (usuario: Usuario) => void
 }
 
 export default function LinhaUsuario(props: LinhaUsuarioProps) {
     return (
-        <div className="flex bg-zinc-900 items-center gap-5 p-4 rounded-md">
+        <div className="flex bg-zinc-900 items-center gap-5 p-4 rounded-md cursor-pointer"
+        onClick={() => props.onClick?.(props.usuario)}>
             <Image 
                 src="https://picsum.photos/80"
                 width={80}
